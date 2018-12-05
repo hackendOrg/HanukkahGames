@@ -21,7 +21,7 @@ public class Riddler {
     }
     public  Answer ask(Question question){
         System.out.println(question.toString());
-        return new Answer(question.getId(),reader.next());
+        return new Answer(question.getId(),Integer.valueOf(reader.next()));
     }
     public void submit(EStatus response)  {
         score+= response.getStatus();

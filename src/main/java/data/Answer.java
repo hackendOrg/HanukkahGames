@@ -2,9 +2,9 @@ package data;
 
 public class Answer {
     private int id;
-    private String answer;
+    private int answer;
 
-    public Answer(int id, String answer) {
+    public Answer(int id, int answer) {
         this.id = id;
         this.answer = answer;
     }
@@ -17,11 +17,11 @@ public class Answer {
         this.id = id;
     }
 
-    public String getAnswer() {
+    public int getAnswer() {
         return answer;
     }
 
-    public void setAnswer(String answer) {
+    public void setAnswer(int answer) {
         this.answer = answer;
     }
 }
