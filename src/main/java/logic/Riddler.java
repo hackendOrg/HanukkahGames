@@ -24,9 +24,10 @@ public class Riddler {
         return new Answer(question.getId(),Integer.valueOf(reader.next()));
     }
     public void submit(EStatus response,int factor)  {
-        score+= response.getStatus();
+        int add = factor == 0 ? response.getStatus() : response.getStatus() /factor;
+        score += add;
         System.out.println(response+"\n");
-        report(factor == 0 ? score : score /factor);
+        report(score);
 
     }
 
