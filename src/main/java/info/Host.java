@@ -46,13 +46,15 @@ public class Host {
         riddler.init();
         boolean shouldContinue = true;
         while(shouldContinue) {
+            long start = System.currentTimeMillis();
             Answer answer = riddler.ask(questions.get(qCount++));
+            int sec = Math.toIntExact((System.currentTimeMillis() - start) / 1000);
             EStatus status = EStatus.WRONG;
             if (answer.getAnswer() == (answers.get(answer.getId()).getAnswer())) {
                 status = EStatus.CORRECT;
 
             }
-           riddler.submit(status);
+           riddler.submit(status,sec);
             shouldContinue = questions.get(qCount) != null;
         }
 
