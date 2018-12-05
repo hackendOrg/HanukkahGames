@@ -46,6 +46,6 @@ public class Question {
     }
     @Override
     public String toString() {
-        return "שאלה "+(id+1) +": "+question+"\n\n" + toStringPossibeAns();
+        return "שאלה "+(id) +": "+question+"\n\n" + toStringPossibeAns();
     }
 }
