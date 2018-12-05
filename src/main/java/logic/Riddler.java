@@ -17,16 +17,17 @@ public class Riddler {
     public void init(){
         System.out.println("מה השם שלכם ?");
         name = reader.next();
-        http = new HTTP("http://10.0.0.13:5000");
+        http = new HTTP("http://10.0.0.12:5000");
     }
     public  Answer ask(Question question){
         System.out.println(question.toString());
         return new Answer(question.getId(),Integer.valueOf(reader.next()));
     }
     public void submit(EStatus response,int factor)  {
-        score+= response.getStatus();
+        int add = factor == 0 ? response.getStatus() : response.getStatus() /factor;
+        score += add;
         System.out.println(response+"\n");
-        report(factor == 0 ? score : score /factor);
+        report(score);
 
     }
 
