@@ -31,10 +31,11 @@ public class Host {
             answers.put(Integer.valueOf(key), new Answer(Integer.valueOf(key), answer));
         }
         riddler = new Riddler();
+
     }
 
     public void startTheShow() {
-
+        riddler.init();
         boolean shouldContinue = true;
         while(shouldContinue) {
             Answer answer = riddler.ask(questions.get(qCount++));

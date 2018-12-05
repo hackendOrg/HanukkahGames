@@ -20,7 +20,7 @@ public class HTTP {
 
     public HTTP(String ipPort) {
         httpclient = HttpClients.createDefault();
-        httppost = new HttpPost();
+        httppost = new HttpPost(ipPort);
     }
 
     public void post(String name, int score) {
@@ -33,10 +33,6 @@ public class HTTP {
             httppost.setEntity(new UrlEncodedFormEntity(params, "UTF-8"));
             //Execute and get the response.
             httpclient.execute(httppost);
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        } catch (ClientProtocolException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }

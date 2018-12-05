@@ -17,7 +17,7 @@ public class Riddler {
     public void init(){
         System.out.println("מה השם שלכם ?");
         name = reader.next();
-        http = new HTTP("10.0.0.13:9000");
+        http = new HTTP("http://10.0.0.13:5000");
     }
     public  Answer ask(Question question){
         System.out.println(question.toString());
